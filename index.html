@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>IRAQ MIND MAP 3D — REAL DATA EDITION</title>
 
-<link href="vendor/maplibre-gl.css" rel="stylesheet">
-<script src="vendor/maplibre-gl.js"></script>
+<link href="maplibre-gl.css" rel="stylesheet">
+<script src="maplibre-gl.js"></script>
 <script>
 maplibregl.setRTLTextPlugin(
-  new URL('vendor/mapbox-gl-rtl-text.js', window.location.href).href,
+  new URL('mapbox-gl-rtl-text.js', window.location.href).href,
   true
 ).catch(error => console.warn('تعذر تحميل دعم الكتابة العربية:', error));
 </script>
@@ -510,7 +510,7 @@ function ensureOSMToGeoJSON(){
   return new Promise((resolve,reject)=>{
     if(window.osmtogeojson){ osmtogeojsonReady = true; return resolve(); }
     const s = document.createElement('script');
-    s.src = 'vendor/osmtogeojson.js';
+    s.src = 'osmtogeojson.js';
     s.onload = ()=>{ osmtogeojsonReady = true; resolve(); };
     s.onerror = ()=> reject(new Error('فشل تحميل osmtogeojson'));
     document.head.appendChild(s);
